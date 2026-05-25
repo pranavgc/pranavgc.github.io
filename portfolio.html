@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pranav Chandratre — Data Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#07080f;
+    --surface:#0d1018;
+    --card:#111520;
+    --border:#1e2535;
+    --gold:#c9963a;
+    --gold-light:#e8b95a;
+    --gold-dim:#7a5a22;
+    --blue:#4a8fff;
+    --blue-dim:#1e3a66;
+    --text:#dde2ec;
+    --muted:#6b7690;
+    --faint:#343b52;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-mono:'IBM Plex Mono',monospace;
+    --font-body:'Outfit',system-ui,sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.7;overflow-x:hidden}
+  ::selection{background:var(--gold-dim);color:#fff}
+  a{color:var(--gold);text-decoration:none;transition:color .2s}
+  a:hover{color:var(--gold-light)}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:background .3s,border-color .3s;backdrop-filter:blur(0)}
+  nav.scrolled{background:rgba(7,8,15,.92);border-color:var(--border);backdrop-filter:blur(12px)}
+  .nav-logo{font-family:var(--font-mono);font-size:13px;color:var(--gold);letter-spacing:.08em}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{font-family:var(--font-mono);font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  #hero-canvas{position:absolute;inset:0;opacity:.35}
+  .hero-inner{position:relative;z-index:1;padding:0 10vw;max-width:1100px}
+  .hero-label{font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:fadeup .7s .3s forwards}
+  .hero-name{font-family:var(--font-display);font-size:clamp(3.5rem,8vw,7.5rem);font-weight:300;line-height:1.05;letter-spacing:-.01em;margin-bottom:1.5rem;opacity:0;animation:fadeup .7s .5s forwards}
+  .hero-name em{font-style:italic;color:var(--gold-light)}
+  .hero-tagline{font-size:1.15rem;color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:2.5rem;opacity:0;animation:fadeup .7s .7s forwards;font-weight:300}
+  .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeup .7s .9s forwards}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.6rem;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:all .2s;cursor:pointer}
+  .btn-primary{background:var(--gold);color:#07080f;font-weight:600}
+  .btn-primary:hover{background:var(--gold-light);color:#07080f}
+  .btn-outline{border:1px solid var(--border);color:var(--muted)}
+  .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+  .hero-scroll{position:absolute;bottom:2.5rem;left:10vw;font-family:var(--font-mono);font-size:11px;color:var(--faint);letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:.8rem;animation:fadeup .7s 1.2s forwards;opacity:0}
+  .hero-scroll::before{content:'';display:block;width:40px;height:1px;background:var(--faint)}
+
+  /* SECTION */
+  section{padding:7rem 10vw;max-width:1100px;margin:0 auto}
+  .section-label{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.25em;text-transform:uppercase;margin-bottom:1rem}
+  .section-title{font-family:var(--font-display);font-size:clamp(2.2rem,4vw,3.5rem);font-weight:300;line-height:1.1;margin-bottom:3rem;letter-spacing:-.01em}
+  .divider{width:100%;height:1px;background:var(--border);margin:0 10vw;max-width:calc(100% - 20vw)}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  .about-text p{color:var(--muted);margin-bottom:1.25rem;font-weight:300;font-size:1.05rem;line-height:1.85}
+  .about-text p strong{color:var(--text);font-weight:500}
+  .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+  .stat-cell{background:var(--card);padding:1.5rem;text-align:center}
+  .stat-num{font-family:var(--font-display);font-size:2.8rem;font-weight:300;color:var(--gold-light);line-height:1;margin-bottom:.3rem}
+  .stat-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:.15em;text-transform:uppercase}
+  .edu-block{margin-top:2rem;border-left:1px solid var(--gold-dim);padding-left:1.5rem}
+  .edu-item{margin-bottom:1.5rem}
+  .edu-school{font-size:.95rem;font-weight:500;color:var(--text);margin-bottom:.2rem}
+  .edu-degree{font-size:.9rem;color:var(--muted);font-weight:300}
+  .edu-year{font-family:var(--font-mono);font-size:11px;color:var(--gold);margin-top:.25rem}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+  .skill-card{background:var(--card);border:1px solid var(--border);padding:1.75rem;transition:border-color .2s}
+  .skill-card:hover{border-color:var(--gold-dim)}
+  .skill-icon{width:36px;height:36px;border:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-family:var(--font-mono);font-size:11px;color:var(--gold)}
+  .skill-cat{font-family:var(--font-mono);font-size:11px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.75rem}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+  .tag{font-family:var(--font-mono);font-size:11px;background:rgba(201,150,58,.08);color:var(--muted);padding:.3rem .7rem;border:1px solid rgba(201,150,58,.15)}
+  .tag.blue{background:rgba(74,143,255,.08);color:#6da8ff;border-color:rgba(74,143,255,.15)}
+
+  /* PROJECTS */
+  .projects-list{display:flex;flex-direction:column;gap:1.5rem}
+  .project-card{background:var(--card);border:1px solid var(--border);padding:2rem 2.25rem;display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem 2rem;align-items:start;transition:border-color .25s,background .25s;text-decoration:none;color:inherit}
+  .project-card:hover{border-color:var(--gold-dim);background:#141826;color:inherit}
+  .proj-num{font-family:var(--font-display);font-size:3rem;font-weight:300;color:var(--faint);line-height:1;width:44px;text-align:right;flex-shrink:0}
+  .proj-body{}
+  .proj-meta{display:flex;align-items:center;gap:1rem;margin-bottom:.6rem;flex-wrap:wrap}
+  .proj-year{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+  .proj-badge{font-family:var(--font-mono);font-size:10px;padding:.2rem .6rem;letter-spacing:.08em;text-transform:uppercase}
+  .badge-ml{background:rgba(201,150,58,.1);color:var(--gold);border:1px solid rgba(201,150,58,.2)}
+  .badge-mlops{background:rgba(74,143,255,.1);color:#7ab8ff;border:1px solid rgba(74,143,255,.2)}
+  .badge-nlp{background:rgba(93,202,165,.1);color:#5dcaa5;border:1px solid rgba(93,202,165,.2)}
+  .badge-dl{background:rgba(159,109,255,.1);color:#b085ff;border:1px solid rgba(159,109,255,.2)}
+  .badge-phys{background:rgba(255,120,80,.1);color:#ff9970;border:1px solid rgba(255,120,80,.2)}
+  .proj-title{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.6rem;line-height:1.2}
+  .proj-desc{font-size:.92rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:620px}
+  .proj-highlights{margin-top:.85rem;display:flex;flex-wrap:wrap;gap:.5rem}
+  .highlight{font-family:var(--font-mono);font-size:10px;color:var(--faint);border:1px solid var(--border);padding:.25rem .6rem}
+  .proj-arrow{color:var(--faint);font-size:1.4rem;line-height:1;transition:color .2s,transform .2s;margin-top:.2rem}
+  .project-card:hover .proj-arrow{color:var(--gold);transform:translate(3px,-3px)}
+
+  /* CERTS */
+  .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+  .cert-card{background:var(--card);border:1px solid var(--border);padding:1.25rem 1.5rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color .2s}
+  .cert-card:hover{border-color:var(--gold-dim)}
+  .cert-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:.55rem;flex-shrink:0}
+  .cert-name{font-size:.9rem;font-weight:400;color:var(--text);margin-bottom:.25rem;line-height:1.4}
+  .cert-issuer{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:.05em}
+  .cert-year{font-family:var(--font-mono);font-size:10px;color:var(--gold-dim);margin-top:.2rem}
+
+  /* CV */
+  .cv-block{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--card);border:1px solid var(--border);padding:2.5rem 3rem}
+  .cv-preview{display:flex;flex-direction:column;gap:0;border-left:1px solid var(--gold-dim);padding-left:1.75rem}
+  .cv-row{display:flex;gap:1.5rem;padding:.65rem 0;border-bottom:1px solid var(--border);align-items:baseline}
+  .cv-row:last-child{border-bottom:none}
+  .cv-key{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;min-width:110px;flex-shrink:0}
+  .cv-val{font-size:.9rem;color:var(--text);font-weight:300}
+  .cv-avail{color:var(--gold);font-family:var(--font-mono);font-size:11px;letter-spacing:.08em}
+  .cv-actions{display:flex;flex-direction:column;gap:1.25rem}
+  .cv-note{font-size:.92rem;color:var(--muted);font-weight:300;line-height:1.75}
+  .cv-btn{justify-content:center;gap:.6rem;font-size:13px;padding:.9rem 2rem}
+  .cv-hint{font-family:var(--font-mono);font-size:11px;color:var(--faint);text-align:center}
+  @media(max-width:768px){.cv-block{grid-template-columns:1fr;gap:2rem;padding:1.75rem}}
+
+  /* CONTACT */
+  .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+  .contact-text p{color:var(--muted);font-size:1.05rem;font-weight:300;line-height:1.85;max-width:400px;margin-bottom:1.5rem}
+  .contact-links{display:flex;flex-direction:column;gap:.75rem}
+  .contact-link{display:flex;align-items:center;gap:.75rem;font-family:var(--font-mono);font-size:12px;color:var(--muted);padding:.75rem 1rem;border:1px solid var(--border);transition:all .2s}
+  .contact-link:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,150,58,.04)}
+  .contact-link-label{font-size:10px;color:var(--faint);margin-right:auto;letter-spacing:.1em;text-transform:uppercase}
+  .contact-link-val{color:inherit}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:2rem 10vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  footer p{font-family:var(--font-mono);font-size:11px;color:var(--faint)}
+
+  /* ANIMATIONS */
+  @keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* MOBILE */
+  @media(max-width:768px){
+    nav .nav-links{display:none}
+    section{padding:5rem 6vw}
+    .about-grid,.contact-inner{grid-template-columns:1fr;gap:2.5rem}
+    .project-card{grid-template-columns:1fr;gap:1rem}
+    .proj-num{display:none}
+    .hero-inner{padding:0 6vw}
+    footer{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <span class="nav-logo">pc.</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-inner">
+    <p class="hero-label">Data Scientist · Birmingham, UK</p>
+    <h1 class="hero-name">Pranav<br/><em>Chandratre</em></h1>
+    <p class="hero-tagline">Physics-trained machine learning researcher specialising in deep learning, graph neural networks, and applied AI systems.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <a href="https://github.com/pranavgc" target="_blank" class="btn btn-outline">GitHub ↗</a>
+    </div>
+  </div>
+  <p class="hero-scroll">Scroll to explore</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label reveal">Background</p>
+  <h2 class="section-title reveal">Physics meets<br/><em style="font-family:var(--font-display);font-style:italic;color:var(--gold-light)">machine learning</em></h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I am a <strong>Data Science MSc student at the University of Birmingham</strong>, with a BS-MS in Physical Sciences from IISER Kolkata — one of India's premier research institutions.</p>
+      <p>My research background spans <strong>high-energy particle physics</strong> and <strong>deep learning</strong>, having built graph neural network models for the CMS experiment at CERN's Large Hadron Collider. I bring the rigour of scientific research to industry data problems.</p>
+      <p>I build end-to-end ML systems — from raw data pipelines and model training to <strong>MLOps deployment</strong> — with a particular interest in NLP, agentic AI, and predictive modelling for business applications.</p>
+      <div class="edu-block">
+        <div class="edu-item">
+          <div class="edu-school">University of Birmingham</div>
+          <div class="edu-degree">MSc Data Science</div>
+          <div class="edu-year">2025 — Present</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-school">IISER Kolkata</div>
+          <div class="edu-degree">BS-MS Physical Sciences (Data Analysis & ML) · 8.52 GPA</div>
+          <div class="edu-year">2017 — 2022</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="about-stats">
+        <div class="stat-cell">
+          <div class="stat-num">96.7%</div>
+          <div class="stat-label">GNN Accuracy (CMS)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">5.6M</div>
+          <div class="stat-label">Records Integrated</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">ML Projects</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label reveal">Expertise</p>
+  <h2 class="section-title reveal">Technical skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-cat">Deep Learning</div>
+      <div class="skill-tags">
+        <span class="tag">PyTorch</span>
+        <span class="tag">TensorFlow</span>
+        <span class="tag">CNNs</span>
+        <span class="tag">GNNs</span>
+        <span class="tag">Transformers</span>
+        <span class="tag">Diffusion Models</span>
+        <span class="tag">GANs</span>
+        <span class="tag">Agentic AI</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-cat">NLP & LLMs</div>
+      <div class="skill-tags">
+        <span class="tag blue">HuggingFace</span>
+        <span class="tag blue">BART / Zero-shot</span>
+        <span class="tag blue">Sequence Models</span>
+        <span class="tag blue">LangChain</span>
+        <span class="tag blue">Gradio</span>
+        <span class="tag blue">RAG</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-cat">ML Engineering</div>
+      <div class="skill-tags">
+        <span class="tag">Scikit-Learn</span>
+        <span class="tag">XGBoost</span>
+        <span class="tag">SMOTE</span>
+        <span class="tag">Feature Engineering</span>
+        <span class="tag">Fuzzy Matching</span>
+        <span class="tag">GPU Training</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-cat">MLOps & Data</div>
+      <div class="skill-tags">
+        <span class="tag blue">GitHub Actions</span>
+        <span class="tag blue">CI/CD Pipelines</span>
+        <span class="tag blue">Python</span>
+        <span class="tag blue">SQL</span>
+        <span class="tag blue">Pandas</span>
+        <span class="tag blue">NumPy</span>
+        <span class="tag blue">APIs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label reveal">Work</p>
+  <h2 class="section-title reveal">Selected projects</h2>
+  <div class="projects-list">
+
+    <a class="project-card reveal" href="https://github.com/pranavgc" target="_blank">
+      <div class="proj-num">01</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">Jan – Mar 2026</span>
+          <span class="proj-badge badge-ml">ML</span>
+          <span class="proj-badge badge-nlp">NLP</span>
+        </div>
+        <h3 class="proj-title">Predictive Modelling for UK Restaurant Insolvency</h3>
+        <p class="proj-desc">Built an early-warning ML system to predict failure of food and beverage businesses across the UK. Integrated 5.6M+ records from Companies House, FHRS, ONS, and Google Places API using complex fuzzy matching. Resolved severe class imbalance (5% minority class) with SMOTE. Proved structural company metrics outperform consumer sentiment as predictors of liquidation.</p>
+        <div class="proj-highlights">
+          <span class="highlight">XGBoost · GPU</span>
+          <span class="highlight">facebook/bart-large-mnli</span>
+          <span class="highlight">SMOTE</span>
+          <span class="highlight">5.6M+ records</span>
+          <span class="highlight">Zero-shot NLP</span>
+        </div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+    <a class="project-card reveal" href="https://huggingface.co/Licht1183" target="_blank">
+      <div class="proj-num">02</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">Dec 2024 – Jan 2025</span>
+          <span class="proj-badge badge-mlops">MLOps</span>
+        </div>
+        <h3 class="proj-title">CI/CD Workflows for Machine Learning Operations</h3>
+        <p class="proj-desc">Built end-to-end machine learning pipelines that automatically trigger on new data or code updates. Implemented using GitHub Actions, Gradio, HuggingFace Spaces, and GitHub Secrets for secure credential management.</p>
+        <div class="proj-highlights">
+          <span class="highlight">GitHub Actions</span>
+          <span class="highlight">HuggingFace</span>
+          <span class="highlight">Gradio</span>
+          <span class="highlight">Automated Pipelines</span>
+        </div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+    <a class="project-card reveal" href="https://drive.google.com/file/d/18htrySMMo9xmfpjaMD3xH_LoDgZASFE5/view" target="_blank">
+      <div class="proj-num">03</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">May 2021 – Jun 2024</span>
+          <span class="proj-badge badge-dl">Deep Learning</span>
+          <span class="proj-badge badge-phys">Physics</span>
+        </div>
+        <h3 class="proj-title">Particle Identification in CMS/HGCAL via Graph Neural Networks</h3>
+        <p class="proj-desc">MS thesis research at IISER Kolkata &amp; Saha Institute of Nuclear Physics. Developed supervised ML models for particle identification based on shower shapes in the High Granularity Calorimeter of the Compact Muon Solenoid (CMS) experiment. Trained using standalone Geant4 simulations. Achieved 94.76% ANN and <strong style="color:var(--gold-light)">96.66% GNN accuracy</strong>. Subsequently extended to Residual and Attention Networks.</p>
+        <div class="proj-highlights">
+          <span class="highlight">Graph Neural Networks</span>
+          <span class="highlight">Attention Networks</span>
+          <span class="highlight">Geant4 Simulation</span>
+          <span class="highlight">CERN CMS Experiment</span>
+        </div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+    <a class="project-card reveal" href="https://github.com/pranavgc" target="_blank">
+      <div class="proj-num">04</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">Jun – Sep 2023</span>
+          <span class="proj-badge badge-dl">Deep Learning</span>
+          <span class="proj-badge badge-phys">Physics</span>
+        </div>
+        <h3 class="proj-title">Muon Scattering Tomography via U-Net Segmentation</h3>
+        <p class="proj-desc">Developed a Convolutional Neural Network (U-Net image segmentation model) for localisation and identification of civil structures and materials, using atmospheric muon scattering data from Geant4 simulations.</p>
+        <div class="proj-highlights">
+          <span class="highlight">U-Net / CNN</span>
+          <span class="highlight">Image Segmentation</span>
+          <span class="highlight">Geant4</span>
+        </div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <p class="section-label reveal">Learning</p>
+  <h2 class="section-title reveal">Certifications</h2>
+  <div class="certs-grid">
+    <div class="cert-card reveal">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">LangChain Agentic AI &amp; LangSmith Workshop</div>
+        <div class="cert-issuer">PwC (Google-powered)</div>
+        <div class="cert-year">February 2026</div>
+      </div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">Generative AI with Diffusion Models</div>
+        <div class="cert-issuer">NVIDIA Deep Learning Institute</div>
+        <div class="cert-year">October 2025</div>
+      </div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">Sequence Models</div>
+        <div class="cert-issuer">DeepLearning.AI</div>
+        <div class="cert-year">February 2024</div>
+      </div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">Generative Adversarial Networks Specialisation</div>
+        <div class="cert-issuer">DeepLearning.AI</div>
+        <div class="cert-year">May 2023</div>
+      </div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">Convolutional Neural Networks</div>
+        <div class="cert-issuer">DeepLearning.AI</div>
+        <div class="cert-year">January 2023</div>
+      </div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-dot"></div>
+      <div>
+        <div class="cert-name">Machine Learning Specialisation</div>
+        <div class="cert-issuer">Coursera / Stanford</div>
+        <div class="cert-year">January 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CV DOWNLOAD -->
+<section id="cv">
+  <p class="section-label reveal">Resume</p>
+  <h2 class="section-title reveal">Curriculum Vitae</h2>
+  <div class="cv-block reveal">
+    <div class="cv-preview">
+      <div class="cv-row"><span class="cv-key">Name</span><span class="cv-val">Pranav Ganesh Chandratre</span></div>
+      <div class="cv-row"><span class="cv-key">Location</span><span class="cv-val">Birmingham, UK</span></div>
+      <div class="cv-row"><span class="cv-key">Education</span><span class="cv-val">MSc Data Science · University of Birmingham</span></div>
+      <div class="cv-row"><span class="cv-key">Specialisation</span><span class="cv-val">Deep Learning · GNNs · NLP · MLOps</span></div>
+      <div class="cv-row"><span class="cv-key">Languages</span><span class="cv-val">Python · SQL · C++ · MATLAB</span></div>
+      <div class="cv-row"><span class="cv-key">Availability</span><span class="cv-val cv-avail">Open to opportunities</span></div>
+    </div>
+    <div class="cv-actions">
+      <p class="cv-note">Full CV including work experience, all projects, and references available as a PDF download.</p>
+      <a href="CV_27_10_-_Copy.docx" download="Pranav_Chandratre_CV.docx" class="btn btn-primary cv-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
+      <p class="cv-hint">Also available on <a href="https://www.linkedin.com/in/pranav-chandratre-6b7988255" target="_blank">LinkedIn ↗</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label reveal">Contact</p>
+  <h2 class="section-title reveal">Let's connect</h2>
+  <div class="contact-inner">
+    <div class="contact-text reveal">
+      <p>I'm actively seeking <strong>Data Science, Machine Learning, and AI</strong> roles across the UK and Europe — open to industry, research, and internship opportunities.</p>
+      <p>Whether you're building something interesting or want to discuss research, I'd love to hear from you.</p>
+    </div>
+    <div class="contact-links reveal">
+      <a class="contact-link" href="mailto:pranavchandratre00@gmail.com">
+        <span class="contact-link-label">Email</span>
+        <span class="contact-link-val">pranavchandratre00@gmail.com</span>
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/pranav-chandratre-6b7988255" target="_blank">
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-val">pranav-chandratre-6b7988255</span>
+      </a>
+      <a class="contact-link" href="https://github.com/pranavgc" target="_blank">
+        <span class="contact-link-label">GitHub</span>
+        <span class="contact-link-val">github.com/pranavgc</span>
+      </a>
+      <a class="contact-link" href="https://huggingface.co/Licht1183" target="_blank">
+        <span class="contact-link-label">HuggingFace</span>
+        <span class="contact-link-val">huggingface.co/Licht1183</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Pranav Ganesh Chandratre</p>
+  <p>Birmingham, UK · Available for opportunities</p>
+</footer>
+
+<script>
+// NAV scroll
+const nav=document.getElementById('main-nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+
+// HERO CANVAS — neural network particle animation
+const cvs=document.getElementById('hero-canvas');
+const ctx=cvs.getContext('2d');
+let W,H,pts=[];
+const N=55,LINK=160,GOLD='rgba(201,150,58,',BLUE='rgba(74,143,255,';
+
+function resize(){W=cvs.width=window.innerWidth;H=cvs.height=window.innerHeight}
+resize();window.addEventListener('resize',()=>{resize();initPts()});
+
+function initPts(){
+  pts=[];
+  for(let i=0;i<N;i++)pts.push({
+    x:Math.random()*W,y:Math.random()*H,
+    vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,
+    r:Math.random()*2+1.5
+  });
+}
+initPts();
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  for(let i=0;i<pts.length;i++){
+    for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+      const d=Math.sqrt(dx*dx+dy*dy);
+      if(d<LINK){
+        const a=(1-d/LINK)*.5;
+        ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.strokeStyle=GOLD+a+')';ctx.lineWidth=.6;ctx.stroke();
+      }
+    }
+  }
+  pts.forEach(p=>{
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=GOLD+'.7)';ctx.fill();
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1;
+    if(p.y<0||p.y>H)p.vy*=-1;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+
+// REVEAL on scroll
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+reveals.forEach(r=>io.observe(r));
+</script>
+</body>
+</html>
