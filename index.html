@@ -352,6 +352,8 @@
         <span class="tag">GNNs</span>
         <span class="tag">Transformers</span>
         <span class="tag">Residual &amp; Attention Nets</span>
+        <span class="tag">Reinforcement Learning</span>
+        <span class="tag">PPO / Stable-Baselines3</span>
         <span class="tag">Diffusion Models</span>
         <span class="tag">GANs</span>
       </div>
@@ -426,7 +428,7 @@
       </div>
     </div>
   </div>
-  <p class="skills-domains reveal"><span>Domains</span> Medical imaging (DICOM, VinDr-CXR) · Experimental particle physics (Geant4, CMS HGCAL) · Alternative data &amp; forecasting · Clinical NLP</p>
+  <p class="skills-domains reveal"><span>Domains</span> Medical imaging (DICOM, VinDr-CXR) · Experimental particle physics (Geant4, CMS HGCAL) · Quantitative finance &amp; DeFi market microstructure · Alternative data &amp; forecasting · Clinical NLP</p>
 </section>
 
 <div class="divider"></div>
@@ -496,8 +498,33 @@
       </div>
     </article>
 
-    <article class="project-card reveal" id="project-jaffle">
+    <article class="project-card reveal" id="project-amm">
       <div class="proj-num">03</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">Jun 2026</span>
+          <span class="proj-badge badge-ml">Reinforcement Learning</span>
+          <span class="proj-badge badge-mlops">Quantitative Finance</span>
+        </div>
+        <h3 class="proj-title">AMM Liquidity Optimisation — RL for Concentrated Liquidity Provision</h3>
+        <p class="proj-desc">Built for TurinTech AI's "SaiFE Sandbox" challenge at Imperial College London's UKFinnovator competition — 48 hours, three people, <strong style="color:var(--gold-light)">second place in the challenge group</strong>. The problem is where to place a liquidity range on an automated market maker so fee income beats gas cost and adverse selection. I decomposed PnL across 300 trajectories before modelling anything, and arbitrageur toxicity turned out not to be the binding constraint: in-range fees ran roughly 26 against 4 of adverse selection. That reframed the task from avoiding toxic flow to maximising range coverage. An interpretable rule-based policy went first as a benchmark — rebalance only when out of range and the tick is static — returning +8.65% on 300 of 300 paths at 31 rebalances per episode. The first PPO agent scored +24.4 and looked respectable until it sat beside the do-nothing baseline and matched it on all twelve reported metrics; it had learned to hold. Dense in-range reward, an anti-HODL penalty and entropy at 0.05 lifted it to +55.8, then a three-phase gas curriculum (cost 0 → 1.5 → 3.0 across ~5.4M timesteps) took it to <strong style="color:var(--gold-light)">+48.02% against +2.44% for the best baseline — 19.7×</strong>, profitable on 300 of 300 evaluation paths at Sharpe 3.87, worst path +12.9%. Evaluation ran at full gas with shaping disabled throughout, so model selection was never judged on the shaped signal. The behavioural analysis then overturned our own opening thesis: the winning agent rebalances 291 times an episode and spends 87% of the stake on gas, with fee income per rebalance at 5.30 against 2.99 of gas cost. "Rebalancing is marginally unprofitable" held only for badly timed rebalancing, so we corrected the write-up rather than the data. Shipped as a dependency-free NumPy forward pass to meet a 64 KB single-file limit — 4,931 parameters, 58.7 KiB — verified against the PyTorch original to 1.02e-07.</p>
+        <div class="proj-highlights">
+          <span class="highlight">PPO · Stable-Baselines3 · Gymnasium</span>
+          <span class="highlight">+48.02% vs +2.44% · 19.7×</span>
+          <span class="highlight">300/300 paths profitable · Sharpe 3.87</span>
+          <span class="highlight">3-phase gas curriculum · 5.4M steps</span>
+          <span class="highlight">4,931 params · 58.7 KiB NumPy</span>
+          <span class="highlight">3 seeds × 100 trajectories</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link primary" href="https://github.com/pranavgc/Amm-Liquidity-Hunter-RL" target="_blank" rel="noopener">Code <span class="arw">&#8599;</span></a>
+          <a class="proj-link" href="https://drive.google.com/file/d/1X5_NPu0W9Qq2mP_rxj7lRI1AbaY1zahk/view?usp=sharing" target="_blank" rel="noopener">UKFinnovator Certificate</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card reveal" id="project-jaffle">
+      <div class="proj-num">04</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Sep 2026</span>
@@ -520,7 +547,7 @@
     </article>
 
     <article class="project-card reveal" id="project-insolvency">
-      <div class="proj-num">04</div>
+      <div class="proj-num">05</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Jan – Mar 2026</span>
@@ -554,7 +581,7 @@
   <div class="projects-list">
 
     <article class="project-card reveal" id="project-cms">
-      <div class="proj-num">05</div>
+      <div class="proj-num">06</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">May 2021 – Jun 2024</span>
@@ -579,7 +606,7 @@
     </article>
 
     <article class="project-card reveal" id="project-muon">
-      <div class="proj-num">06</div>
+      <div class="proj-num">07</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Jun – Sep 2023</span>
@@ -611,7 +638,7 @@
   <div class="projects-list">
 
     <article class="project-card reveal" id="project-armour">
-      <div class="proj-num">07</div>
+      <div class="proj-num">08</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">May – Sep 2026</span>
@@ -632,7 +659,7 @@
     </article>
 
     <article class="project-card reveal" id="project-skillsync">
-      <div class="proj-num">08</div>
+      <div class="proj-num">09</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Apr – May 2026</span>
@@ -655,7 +682,7 @@
     </article>
 
     <article class="project-card reveal" id="project-gradcore">
-      <div class="proj-num">09</div>
+      <div class="proj-num">10</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Jun 2026</span>
@@ -675,7 +702,7 @@
     </article>
 
     <article class="project-card reveal" id="project-mlops">
-      <div class="proj-num">10</div>
+      <div class="proj-num">11</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Dec 2024 – Jan 2025</span>
