@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Pranav Chandratre — Data Scientist</title>
-<meta name="description" content="Pranav Chandratre — Data Scientist, Machine Learning Engineer and Research Engineer with two research Master's: MSc Data Science (University of Birmingham) and MS Physical Sciences (IISER Kolkata). Diffusion models and uncertainty quantification for medical imaging, graph neural networks for the CERN CMS experiment, and production ML pipelines. Birmingham, UK; open to roles internationally."/>
+<meta name="description" content="Pranav Chandratre — Machine Learning Engineer, Research Engineer and Data Scientist. Model evaluation, uncertainty quantification and forecasting, with two research Master's: MSc Data Science (University of Birmingham) and MS Physical Sciences (IISER Kolkata). Generative and diffusion models, graph neural networks and production ML pipelines — work carried out in medical imaging and at the CERN CMS experiment. Birmingham, UK; open to roles internationally."/>
 <meta name="author" content="Pranav Ganesh Chandratre"/>
 
 <!-- ▸ SET THIS to your live site root, then leave the rest alone. Every absolute URL below is built from it. -->
@@ -16,13 +16,13 @@
 <meta property="og:type" content="profile"/>
 <meta property="og:site_name" content="Pranav Chandratre"/>
 <meta property="og:title" content="Pranav Chandratre — Data Scientist"/>
-<meta property="og:description" content="Two research Master's, in physics and data science. Diffusion-model uncertainty for chest radiography, graph neural networks for CERN CMS, and production ML pipelines."/>
+<meta property="og:description" content="Two research Master's, in physics and data science. Machine learning, model evaluation and forecasting — diffusion models, graph neural networks for CERN CMS, and pipelines that ship."/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Pranav Chandratre, Data Scientist — pixel-wise uncertainty map over a chest radiograph"/>
+<meta property="og:image:alt" content="Pranav Chandratre — per-seed replication results across five classes, the retracted single-seed estimate marked in gold"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Pranav Chandratre — Data Scientist"/>
-<meta name="twitter:description" content="Two research Master's, in physics and data science. Diffusion-model uncertainty for chest radiography, graph neural networks for CERN CMS, and production ML pipelines."/>
+<meta name="twitter:description" content="Two research Master's, in physics and data science. Machine learning, model evaluation and forecasting — diffusion models, graph neural networks for CERN CMS, and pipelines that ship."/>
 <meta name="theme-color" content="#07080f"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 
@@ -34,7 +34,7 @@
   "alternateName": "Pranav Chandratre",
   "url": "https://pranavgc.github.io/",
   "image": "https://pranavgc.github.io/og-image.png",
-  "jobTitle": "Data Scientist",
+  "jobTitle": ["Machine Learning Engineer", "Research Engineer", "Data Scientist"],
   "email": "mailto:pranavchandratre00@gmail.com",
   "address": {"@type": "PostalAddress", "addressLocality": "Birmingham", "addressCountry": "GB"},
   "alumniOf": [
@@ -42,9 +42,10 @@
     {"@type": "CollegeOrUniversity", "name": "Indian Institute of Science Education and Research Kolkata"}
   ],
   "knowsAbout": [
-    "Machine Learning","Deep Learning","Diffusion Models","Uncertainty Quantification",
-    "Medical Imaging","Graph Neural Networks","Experimental Particle Physics","Calorimetry",
-    "Natural Language Processing","MLOps","Statistics","Python","PyTorch"
+    "Machine Learning","Model Evaluation","Uncertainty Quantification","Deep Learning",
+    "Forecasting","Generative Models","Diffusion Models","Graph Neural Networks",
+    "Statistics","Experimental Design","MLOps","Python","PyTorch",
+    "Experimental Particle Physics","Calorimetry","Medical Imaging"
   ],
   "hasCredential": [
     {"@type":"EducationalOccupationalCredential","credentialCategory":"degree","name":"MSc Data Science, University of Birmingham"},
@@ -95,10 +96,10 @@
 
   /* HERO */
   .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-  .hero-media{position:absolute;inset:0;background:url('hero-variance.jpg') no-repeat right center/contain;opacity:.30;mix-blend-mode:screen;pointer-events:none}
+  .hero-media{position:absolute;inset:0;background:url('hero-replication.jpg') no-repeat right center/contain;opacity:.62;mix-blend-mode:screen;pointer-events:none}
   .hero-veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,var(--bg) 0%,var(--bg) 32%,rgba(7,8,15,.72) 56%,rgba(7,8,15,.28) 100%)}
   #hero-canvas{position:absolute;inset:0;opacity:.28}
-  @media(max-width:900px){.hero-media{opacity:.14}.hero-veil{background:linear-gradient(180deg,rgba(7,8,15,.55) 0%,rgba(7,8,15,.88) 70%)}}
+  @media(max-width:900px){.hero-media{opacity:.30}.hero-veil{background:linear-gradient(180deg,rgba(7,8,15,.55) 0%,rgba(7,8,15,.88) 70%)}}
   .hero-inner{position:relative;z-index:1;padding:0 10vw;max-width:1100px}
   .hero-label{font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:fadeup .7s .3s forwards}
   .hero-name{font-family:var(--font-display);font-size:clamp(3.5rem,8vw,7.5rem);font-weight:300;line-height:1.05;letter-spacing:-.01em;margin-bottom:1.5rem;opacity:0;animation:fadeup .7s .5s forwards}
@@ -144,6 +145,9 @@
   .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
   .tag{font-family:var(--font-mono);font-size:11px;background:rgba(201,150,58,.08);color:var(--muted);padding:.3rem .7rem;border:1px solid rgba(201,150,58,.15)}
   .tag.blue{background:rgba(74,143,255,.08);color:#6da8ff;border-color:rgba(74,143,255,.15)}
+
+  .skills-domains{margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--border);font-size:.9rem;color:var(--muted);font-weight:300;line-height:1.8}
+  .skills-domains span{font-family:var(--font-mono);font-size:10px;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-right:.9rem}
 
   /* PROJECTS */
   .projects-list{display:flex;flex-direction:column;gap:1.5rem}
@@ -252,8 +256,9 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#physics">Physics</a></li>
+    <li><a href="#shipped">Shipped</a></li>
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#cv">CV</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -262,15 +267,15 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-media" role="img" aria-label="Pixel-wise generative uncertainty map computed over a chest radiograph"></div>
+  <div class="hero-media" role="img" aria-label="Per-seed replication results across five classes; the retracted single-seed estimate marked in gold"></div>
   <div class="hero-veil"></div>
   <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <p class="hero-label">Data Scientist · Research Engineer · Birmingham, UK</p>
     <h1 class="hero-name">Pranav<br/><em>Chandratre</em></h1>
-    <p class="hero-tagline">Two research Master's, in physics and in data science. I work on generative models and uncertainty quantification for medical imaging, graph neural networks for CERN's CMS detector, and the pipelines and evaluation that keep both honest.</p>
+    <p class="hero-tagline">Two research Master's, in physics and in data science. I build machine learning systems and measure whether they actually work — generative models, graph neural networks at CERN scale, and the evaluation that decides which results survive.</p>
     <div class="hero-cta">
-      <a href="#research" class="btn btn-primary">View Research</a>
+      <a href="#work" class="btn btn-primary">View Work</a>
       <a href="#contact" class="btn btn-outline">Get in Touch</a>
       <a href="https://github.com/pranavgc" target="_blank" class="btn btn-outline">GitHub ↗</a>
     </div>
@@ -283,26 +288,14 @@
 <!-- ABOUT -->
 <section id="about">
   <p class="section-label reveal">Background</p>
-  <h2 class="section-title reveal">Physics and<br/><em style="font-family:var(--font-display);font-style:italic;color:var(--gold-light)">machine learning</em></h2>
+  <h2 class="section-title reveal">Building models,<br/><em style="font-family:var(--font-display);font-style:italic;color:var(--gold-light)">and measuring them</em></h2>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>I hold <strong>two Master's degrees</strong>: an MSc in Data Science from the University of Birmingham, completed September 2026, and an MS in Physical Sciences from IISER Kolkata, taken inside a five-year BS-MS dual degree with a specialisation in data analysis and machine learning.</p>
-      <p>Both are research degrees and both ended in a thesis. That is the part worth knowing about me — <strong>physics and machine learning are two fields I work in</strong>, not a field I left and a field I moved to. The physics thesis trained graph, dense and residual networks on roughly 100,000 Geant4-simulated events from the CMS detector at CERN. The data science thesis asked whether a diffusion model's own sampling noise can be read as a spatial account of what it does and doesn't know about a chest radiograph.</p>
-      <p>What carries across is method: negative controls, decision rules fixed before the run, effect sizes rather than p-values alone, and <strong>a willingness to retract a result that does not replicate</strong>. I build the systems around the research too — data pipelines, CI, evaluation harnesses — most recently a multimodal clinical extraction pipeline that went from hackathon prototype to a merged codebase submitted for clinical pilot.</p>
-      <div class="edu-block">
-        <div class="edu-item">
-          <div class="edu-school">University of Birmingham, Edgbaston Campus, UK</div>
-          <div class="edu-degree">MSc Data Science</div>
-          <div class="edu-thesis">Dissertation: <em>Quantifying Epistemic Uncertainty in Diffusion Models for Chest Radiography</em> · supervised by Dr Qingjie Meng, School of Computer Science</div>
-          <div class="edu-year">2025 — 2026</div>
-        </div>
-        <div class="edu-item">
-          <div class="edu-school">Indian Institute of Science Education and Research(IISER) Kolkata, India</div>
-          <div class="edu-degree">BS-MS Dual Degree, Physical Sciences (Specialization in Data Analysis & ML) · 8.52 GPA</div>
-          <div class="edu-thesis">MS Thesis: <em>Particle Detection and Classification in the High-Granularity Calorimeter of the CMS Detector</em> · supervised by Dr Satyaki Bhattacharya (Saha Institute of Nuclear Physics) and Dr Ritesh Kumar Singh (IISER Kolkata)<br/>INSPIRE Scholarship, Department of Science and Technology, Government of India</div>
-          <div class="edu-year">2017 — 2022</div>
-        </div>
-      </div>
+      <p>I build machine learning systems. Most of my effort goes into measuring whether they actually work, because any model looks good on the run you decided to keep. It's the second run that tells you something.</p>
+      <p>That comes out of <strong>two research Master's, both ending in a thesis</strong>. The first, in physical sciences at IISER Kolkata, was particle identification in the High-Granularity Calorimeter of the CMS experiment at CERN. I built the standalone Geant4 simulation that generated the training data — roughly 100,000 events across eight particle types — and the graph construction over calorimeter hits that fed the graph networks, wiring each fired cell to its six in-layer neighbours and the corresponding cell blocks in the layers either side. Dense, residual, convolutional and attention architectures trained on a multi-GPU (Tesla P100) cluster, reaching <strong>94.76% ANN and 96.66% GNN accuracy</strong>.</p>
+      <p>My <strong>second Master's thesis</strong>, in data science at Birmingham, asked whether a diffusion model's own sampling noise can be read as an account of what it does and doesn't know about one specific image. A real chest radiograph is inverted to a fixed latent by DDIM inversion, then reconstructed twenty times under stochastic sampling, so the per-pixel variance belongs to that patient's image rather than to the generator in general. Scored against radiologist annotations across five pathologies, four localise above chance and one — Cardiomegaly, at 0.450 pixel AUROC — sits below it, because that finding is a judgement about heart size relative to the chest rather than a local texture anything can point at. Halving the sampler's stochasticity stripped 47% of the variance and left localisation slightly better, which says most of the raw signal carries no spatial information at all. I later LoRA fine-tuned the generator on in-domain data to test whether the whole effect was just a domain gap. It wasn't.</p>
+      <p>The thesis ended with a pre-registered five-seed replication that made me <strong>withdraw one of my own significant results</strong>. Training-seed variance turned out to exceed test-set variance.</p>
+      <p>I'm after machine learning and research engineering work where both halves count — systematic investment, applied research, generative models. Physics and machine learning are two fields I work in, not one I left for the other. Different problems, same question underneath: signal, or story?</p>
     </div>
     <div class="reveal">
       <div class="about-stats">
@@ -321,6 +314,20 @@
         <div class="stat-cell">
           <div class="stat-num">5.6M</div>
           <div class="stat-label">Records Integrated</div>
+        </div>
+      </div>
+      <div class="edu-block">
+        <div class="edu-item">
+          <div class="edu-school">University of Birmingham, Edgbaston Campus, UK</div>
+          <div class="edu-degree">MSc Data Science</div>
+          <div class="edu-thesis">Dissertation: <em>Quantifying Epistemic Uncertainty in Diffusion Models for Chest Radiography</em> · supervised by Dr Qingjie Meng, School of Computer Science</div>
+          <div class="edu-year">2025 — 2026</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-school">Indian Institute of Science Education and Research(IISER) Kolkata, India</div>
+          <div class="edu-degree">BS-MS Dual Degree, Physical Sciences (Specialization in Data Analysis & ML) · 8.52 GPA</div>
+          <div class="edu-thesis">MS Thesis: <em>Particle Detection and Classification in the High-Granularity Calorimeter of the CMS Detector</em> · supervised by Dr Satyaki Bhattacharya (Saha Institute of Nuclear Physics) and Dr Ritesh Kumar Singh (IISER Kolkata)<br/>INSPIRE Scholarship, Department of Science and Technology, Government of India</div>
+          <div class="edu-year">2017 — 2022</div>
         </div>
       </div>
     </div>
@@ -342,23 +349,23 @@
         <span class="tag">CNNs</span>
         <span class="tag">GNNs</span>
         <span class="tag">Transformers</span>
+        <span class="tag">Residual &amp; Attention Nets</span>
         <span class="tag">Diffusion Models</span>
         <span class="tag">GANs</span>
-        <span class="tag">Agentic AI</span>
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-cat">NLP & LLMs</div>
+      <div class="skill-cat">Statistics &amp; Experiment Design</div>
       <div class="skill-tags">
-        <span class="tag blue">HuggingFace</span>
-        <span class="tag blue">BART / Zero-shot</span>
-        <span class="tag blue">Sequence Models</span>
-        <span class="tag blue">LangChain</span>
-        <span class="tag blue">Multi-agent Pipelines</span>
-        <span class="tag blue">Structured Extraction</span>
-        <span class="tag blue">Speech-to-Text</span>
-        <span class="tag blue">Gradio</span>
-        <span class="tag blue">RAG</span>
+        <span class="tag blue">Bootstrap CIs</span>
+        <span class="tag blue">Wilcoxon / Friedman</span>
+        <span class="tag blue">DeLong Test</span>
+        <span class="tag blue">Benjamini–Hochberg</span>
+        <span class="tag blue">Pre-registration</span>
+        <span class="tag blue">Negative Controls</span>
+        <span class="tag blue">Negative Binomial GLM</span>
+        <span class="tag blue">Rolling-origin CV</span>
+        <span class="tag blue">Seed Replication</span>
       </div>
     </div>
     <div class="skill-card reveal">
@@ -375,7 +382,7 @@
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-cat">MLOps & Data</div>
+      <div class="skill-cat">MLOps &amp; Data</div>
       <div class="skill-tags">
         <span class="tag blue">GitHub Actions</span>
         <span class="tag blue">CI/CD Pipelines</span>
@@ -391,7 +398,7 @@
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-cat">Generative &amp; Medical Imaging</div>
+      <div class="skill-cat">Generative AI</div>
       <div class="skill-tags">
         <span class="tag">Latent Diffusion</span>
         <span class="tag">DDIM Inversion</span>
@@ -400,33 +407,32 @@
         <span class="tag">Uncertainty Quantification</span>
         <span class="tag">Grad-CAM</span>
         <span class="tag">MC Dropout</span>
-        <span class="tag">DICOM / HDF5</span>
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-cat">Statistics &amp; Experiment Design</div>
+      <div class="skill-cat">NLP &amp; LLMs</div>
       <div class="skill-tags">
-        <span class="tag blue">Bootstrap CIs</span>
-        <span class="tag blue">Wilcoxon / Friedman</span>
-        <span class="tag blue">DeLong Test</span>
-        <span class="tag blue">Benjamini–Hochberg</span>
-        <span class="tag blue">Pre-registration</span>
-        <span class="tag blue">Negative Controls</span>
-        <span class="tag blue">Negative Binomial GLM</span>
-        <span class="tag blue">Rolling-origin CV</span>
-        <span class="tag blue">Ablation Design</span>
-        <span class="tag blue">Seed Replication</span>
+        <span class="tag blue">HuggingFace</span>
+        <span class="tag blue">BART / Zero-shot</span>
+        <span class="tag blue">Sequence Models</span>
+        <span class="tag blue">LangChain</span>
+        <span class="tag blue">Multi-agent Pipelines</span>
+        <span class="tag blue">Structured Extraction</span>
+        <span class="tag blue">Speech-to-Text</span>
+        <span class="tag blue">Gradio</span>
+        <span class="tag blue">RAG</span>
       </div>
     </div>
   </div>
+  <p class="skills-domains reveal"><span>Domains</span> Medical imaging (DICOM, VinDr-CXR) · Experimental particle physics (Geant4, CMS HGCAL) · Alternative data &amp; forecasting · Clinical NLP</p>
 </section>
 
 <div class="divider"></div>
 
-<!-- RESEARCH & EXPERIENCE -->
-<section id="research">
-  <p class="section-label reveal">Research</p>
-  <h2 class="section-title reveal">Two theses,<br/><em style="font-family:var(--font-display);font-style:italic;color:var(--gold-light)">two fields</em></h2>
+<!-- MEASUREMENT & MODELLING -->
+<section id="work">
+  <p class="section-label reveal">Work</p>
+  <h2 class="section-title reveal">Measurement<br/><em style="font-family:var(--font-display);font-style:italic;color:var(--gold-light)">and modelling</em></h2>
 
   <blockquote class="pullquote reveal">
     <p>A pre-registered five-seed replication forced me to <strong>withdraw one of my own significant results</strong>. Training-seed variability (SD 0.038) exceeded test-sampling variability (SD 0.028), and every class flipped sign across seeds.</p>
@@ -457,38 +463,13 @@
         <div class="proj-links">
           <a class="proj-link primary" href="https://github.com/pranavgc/Uncertainty-Quantification-in-Diffusion-Models-for-Chest-Radiography" target="_blank" rel="noopener">Code <span class="arw">&#8599;</span></a>
           <a class="proj-link" href="MSc_Thesis_Pranav_Chandratre.pdf" target="_blank" rel="noopener">Full Thesis (PDF)</a>
-          <a class="proj-link" href="#project-extension">&#8595; Extended in 03</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="project-card reveal" id="project-cms">
-      <div class="proj-num">02</div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-year">May 2021 – Jun 2024</span>
-          <span class="proj-badge badge-ml">MS Thesis</span>
-          <span class="proj-badge badge-dl">Deep Learning</span>
-          <span class="proj-badge badge-phys">Physics</span>
-        </div>
-        <h3 class="proj-title">Particle Identification in the CMS High-Granularity Calorimeter</h3>
-        <p class="proj-desc">MS thesis in Physical Sciences at IISER Kolkata, continued as a two-year post-MS research appointment with the Saha Institute of Nuclear Physics, supervised by Dr Satyaki Bhattacharya and Dr Ritesh Kumar Singh. HGCAL is the silicon calorimeter replacing the CMS endcap; its granularity turns a particle shower into a five-dimensional object rather than an energy number, which is what makes shower shape learnable at all. I built the standalone Geant4 simulation behind the training data — roughly <strong style="color:var(--gold-light)">100,000 events across eight particle types</strong> (muon, positron, gamma, &#960;&#8314;, proton, K&#8314;, neutron, K&#8304;<sub>L</sub>) — and the graph construction over calorimeter hits, wiring each fired cell to its six in-layer neighbours and the corresponding cell blocks in the layers on either side, so the topology encodes detector geometry rather than a learned similarity. Dense, residual, graph-convolutional and graph-attention architectures were trained on multi-GPU Tesla P100 hardware, reaching <strong style="color:var(--gold-light)">94.76% ANN and 96.66% GNN accuracy</strong>. Attention beat plain convolution across every feature set tested, residual connections helped both families, and adding simulated detector noise held accuracy up under noisier inputs. Presented as a poster at the IISER Kolkata Department of Physical Sciences foundation day, March 2023.</p>
-        <div class="proj-highlights">
-          <span class="highlight">Geant4 · ~100k simulated events</span>
-          <span class="highlight">8-particle classification</span>
-          <span class="highlight">GCN · GAT · Residual</span>
-          <span class="highlight">PyTorch Geometric</span>
-          <span class="highlight">Multi-GPU Tesla P100</span>
-          <span class="highlight">CERN CMS Experiment</span>
-        </div>
-        <div class="proj-links">
-          <a class="proj-link primary" href="https://drive.google.com/file/d/18htrySMMo9xmfpjaMD3xH_LoDgZASFE5/view" target="_blank" rel="noopener">Thesis Report <span class="arw">&#8599;</span></a>
+          <a class="proj-link" href="#project-extension">&#8595; Extended in 02</a>
         </div>
       </div>
     </article>
 
     <article class="project-card reveal" id="project-extension">
-      <div class="proj-num">03</div>
+      <div class="proj-num">02</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Sep 2026</span>
@@ -497,7 +478,7 @@
           <span class="proj-badge badge-med">Medical Imaging</span>
         </div>
         <h3 class="proj-title">LoRA Domain Adaptation of a Chest X-ray Diffusion Model</h3>
-        <p class="proj-desc">An independent follow-up to the MSc thesis, run after submission. The thesis blamed weak pathology localisation on edge dominance — variance settling on ribs and diaphragm rather than lesions — but it used RoentGen-v2 zero-shot, which left the obvious objection untested: maybe the maps were edge-dominated because the generator was out of domain. So I adapted the generator. LoRA on the diffusion UNet, rank 8, 1.66M of 867M parameters trainable, 2,000 in-domain radiographs, captions stripped of class names so the weights could not smuggle in label supervision. Edge dominance rose rather than fell — Spearman &#961; against a Sobel edge map up <strong style="color:var(--gold-light)">0.046 on Cardiomegaly and 0.061 on Consolidation</strong> across 150 prompt-matched pairs, both p&nbsp;&lt;&nbsp;0.0001. A slope fitted before the intervention existed predicted Consolidation's AUROC shift to within 0.002 and got Cardiomegaly's sign wrong: an observational relationship that did not survive contact with an intervention. Peak variance still landed outside every annotated box, 0 of 150 in both arms. Full fine-tuning is in progress.</p>
+        <p class="proj-desc">An independent follow-up to the MSc thesis, run after submission, and a pre-registered intervention rather than a post-hoc explanation. The thesis blamed weak pathology localisation on edge dominance — variance settling on ribs and diaphragm rather than lesions — but it used RoentGen-v2 zero-shot, which left the obvious objection untested: maybe the maps were edge-dominated because the generator was out of domain. So I adapted the generator. LoRA on the diffusion UNet, rank 8, 1.66M of 867M parameters trainable, 2,000 in-domain radiographs, captions stripped of class names so the weights could not smuggle in label supervision. Edge dominance rose rather than fell — Spearman &#961; against a Sobel edge map up <strong style="color:var(--gold-light)">0.046 on Cardiomegaly and 0.061 on Consolidation</strong> across 150 prompt-matched pairs, both p&nbsp;&lt;&nbsp;0.0001. A slope fitted before the intervention existed predicted Consolidation's AUROC shift to within 0.002 and got Cardiomegaly's sign wrong: an observational relationship that did not survive contact with an intervention. Peak variance still landed outside every annotated box, 0 of 150 in both arms. Full fine-tuning is in progress.</p>
         <div class="proj-highlights">
           <span class="highlight">LoRA r=8 · 0.19% of UNet</span>
           <span class="highlight">RoentGen-v2 · diffusers</span>
@@ -513,8 +494,122 @@
       </div>
     </article>
 
-    <article class="project-card reveal" id="project-armour">
+    <article class="project-card reveal" id="project-jaffle">
+      <div class="proj-num">03</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">Sep 2026</span>
+          <span class="proj-badge badge-ml">Forecasting</span>
+          <span class="proj-badge badge-mlops">Data Engineering</span>
+        </div>
+        <h3 class="proj-title">Jaffle Demand Lab — Forecasting with Ground-Truth Model Evaluation</h3>
+        <p class="proj-desc">A forecasting system built so that every accuracy claim can be checked against ground truth rather than against another model's output. A seeded simulator generates 687k orders and 984k order lines across 1,096 days, which is what makes the ground truth exist in the first place. Nine models were benchmarked over 52,310 store × SKU × day rows under rolling-origin cross-validation, cutting <strong style="color:var(--gold-light)">RMSE 38.2% below baseline</strong> on a 90-day holdout scored exactly once. A Poisson fit was replaced with a Negative Binomial GLM after measuring overdispersion at Pearson &#967;²/df = 4.80. The result worth keeping is about validation rather than accuracy: random K-fold overstated performance by 6.1% against a size-matched rolling fold — measured, not assumed — with point-in-time correctness enforced by a dbt test that recomputes every rolling window. Five injected source faults each pair a detecting test with a repairing model, under CI on every commit, and the whole thing runs from a clean clone on DuckDB with no cloud credentials.</p>
+        <div class="proj-highlights">
+          <span class="highlight">dbt Fusion · 23 models · 114 tests</span>
+          <span class="highlight">Rolling-origin CV · leakage measured</span>
+          <span class="highlight">Negative Binomial GLM</span>
+          <span class="highlight">DuckDB · BigQuery · LightGBM</span>
+          <span class="highlight">pytest · GitHub Actions CI</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link primary" href="https://github.com/pranavgc/UOB_dbt_workshop_starter" target="_blank" rel="noopener">Code <span class="arw">&#8599;</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card reveal" id="project-insolvency">
       <div class="proj-num">04</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">Jan – Mar 2026</span>
+          <span class="proj-badge badge-ml">ML</span>
+          <span class="proj-badge badge-nlp">Alternative Data</span>
+        </div>
+        <h3 class="proj-title">Predicting UK Restaurant Insolvency from Alternative Data</h3>
+        <p class="proj-desc">An early-warning system for the failure of food and beverage businesses across the UK. The hard part was the data, not the model: 5.6M+ Companies House records resolved into a <strong style="color:var(--gold-light)">24,750-sample dataset</strong> by matching entities across four sources that share no primary key — Companies House, the Food Hygiene Rating Scheme, ONS and the Google Places API. Zero-shot sentiment classification with facebook/bart-large-mnli supplied the consumer-facing signal, and an XGBoost classifier (1,200 trees, CUDA A100) reached F1 = 0.24, precision = 0.48 and AUC = 0.73 on the minority class under 95:5 imbalance. Gain-based feature importance gave the finding worth keeping: structural and administrative signals beat customer-facing metrics as failure predictors, and they are available before a restaurant opens its doors.</p>
+        <div class="proj-highlights">
+          <span class="highlight">5.6M+ records · 4 sources</span>
+          <span class="highlight">Entity resolution · no shared key</span>
+          <span class="highlight">XGBoost · CUDA A100</span>
+          <span class="highlight">SMOTE · 95:5 imbalance</span>
+          <span class="highlight">facebook/bart-large-mnli</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link primary" href="https://github.com/pranavgc/Spill_the_tea" target="_blank" rel="noopener">Code <span class="arw">&#8599;</span></a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHYSICS & SIMULATION -->
+<section id="physics">
+  <p class="section-label reveal">Physics</p>
+  <h2 class="section-title reveal">Physics<br/><em style="font-family:var(--font-display);font-style:italic;color:var(--gold-light)">and simulation</em></h2>
+  <div class="projects-list">
+
+    <article class="project-card reveal" id="project-cms">
+      <div class="proj-num">05</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">May 2021 – Jun 2024</span>
+          <span class="proj-badge badge-ml">MS Thesis</span>
+          <span class="proj-badge badge-dl">Deep Learning</span>
+          <span class="proj-badge badge-phys">Physics</span>
+        </div>
+        <h3 class="proj-title">Particle Identification in the CMS High-Granularity Calorimeter</h3>
+        <p class="proj-desc">MS thesis in Physical Sciences at IISER Kolkata, continued as a two-year post-MS research appointment with the Saha Institute of Nuclear Physics, supervised by Dr Satyaki Bhattacharya and Dr Ritesh Kumar Singh. HGCAL is the silicon calorimeter replacing the CMS endcap; its granularity turns a particle shower into a five-dimensional object rather than an energy number, which is what makes shower shape learnable at all. I built the standalone Geant4 simulation behind the training data — roughly <strong style="color:var(--gold-light)">100,000 events across eight particle types</strong> (muon, positron, gamma, &#960;&#8314;, proton, K&#8314;, neutron, K&#8304;<sub>L</sub>) — and the graph construction over calorimeter hits, wiring each fired cell to its six in-layer neighbours and the corresponding cell blocks in the layers on either side, so the topology encodes detector geometry rather than a learned similarity. Dense, residual, graph-convolutional and graph-attention architectures were trained on a multi-GPU (Tesla P100) cluster, reaching <strong style="color:var(--gold-light)">94.76% ANN and 96.66% GNN accuracy</strong>. Attention beat plain convolution across every feature set tested, residual connections helped both families, and adding simulated detector noise held accuracy up under noisier inputs. Presented as a poster at the IISER Kolkata Department of Physical Sciences foundation day, March 2023.</p>
+        <div class="proj-highlights">
+          <span class="highlight">Geant4 · ~100k simulated events</span>
+          <span class="highlight">8-particle classification</span>
+          <span class="highlight">GCN · GAT · Residual</span>
+          <span class="highlight">PyTorch Geometric</span>
+          <span class="highlight">Multi-GPU (Tesla P100) cluster</span>
+          <span class="highlight">CERN CMS Experiment</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link primary" href="https://drive.google.com/file/d/18htrySMMo9xmfpjaMD3xH_LoDgZASFE5/view" target="_blank" rel="noopener">Thesis Report <span class="arw">&#8599;</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card reveal" id="project-muon">
+      <div class="proj-num">06</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">Jun – Sep 2023</span>
+          <span class="proj-badge badge-dl">Deep Learning</span>
+          <span class="proj-badge badge-phys">Physics</span>
+        </div>
+        <h3 class="proj-title">Muon Scattering Tomography via U-Net Segmentation</h3>
+        <p class="proj-desc">A U-Net segmentation CNN that localises and identifies civil structures and materials from atmospheric muon scattering, using Geant4 simulation data. Cosmic-ray muons pass through almost anything, so the signal is what the scattering angles imply about density along the path rather than anything directly imaged.</p>
+        <div class="proj-highlights">
+          <span class="highlight">U-Net / CNN</span>
+          <span class="highlight">Image Segmentation</span>
+          <span class="highlight">Geant4</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link primary" href="https://github.com/pranavgc" target="_blank" rel="noopener">GitHub <span class="arw">&#8599;</span></a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SHIPPED SYSTEMS -->
+<section id="shipped">
+  <p class="section-label reveal">Shipped</p>
+  <h2 class="section-title reveal">Systems with<br/><em style="font-family:var(--font-display);font-style:italic;color:var(--gold-light)">users attached</em></h2>
+  <div class="projects-list">
+
+    <article class="project-card reveal" id="project-armour">
+      <div class="proj-num">07</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">May – Sep 2026</span>
@@ -522,7 +617,7 @@
           <span class="proj-badge badge-med">Clinical</span>
         </div>
         <h3 class="proj-title">Clinical Form Extraction from Multilingual Consultation Audio</h3>
-        <p class="proj-desc">AI Developer Intern at Armour Group. Took a hackathon prototype through to implementation: the extraction pipeline was merged into the product codebase and <strong style="color:var(--gold-light)">submitted for a clinical pilot</strong>, built alongside clinicians and engineers who set the review thresholds and the failure cases. The system is a six-stage multimodal pipeline turning multilingual consultation audio into structured clinical forms — 11+ form types, 38+ languages — to which I added a second-pass reviewer for fields lost at segmentation boundaries and an evidence-verification stage for every extracted value. Rebuilding the confidence engine around asymmetric clinical cost cut Brier score from 0.276 to 0.100 on the reference recording and raised high-confidence-tier precision to 0.93. The veto layer was measured rather than assumed: it removes 60% of extracted fields and 72% of the errors, a 67% hit rate against a 48% base error rate. Every field cites a verbatim transcript span scored for presence, entailment and uniqueness, so an ambiguous span such as a bare "yes" gets discounted. I also built the batch evaluation harness and a threshold-fitting tool sweeping false-auto-fill rate against coverage, plus transcription caching with deterministic sampling so evaluation runs repeat exactly.</p>
+        <p class="proj-desc">AI Developer Intern at Armour Group. Took a hackathon prototype through to implementation: the extraction pipeline was <strong style="color:var(--gold-light)">merged into the product codebase and submitted for a clinical pilot</strong>, built alongside clinicians and engineers who set the review thresholds and the failure cases. The system is a six-stage multimodal pipeline turning multilingual consultation audio into structured clinical forms — 11+ form types, 38+ languages — to which I added a second-pass reviewer for fields lost at segmentation boundaries and an evidence-verification stage for every extracted value. Rebuilding the confidence engine around asymmetric clinical cost cut Brier score from 0.276 to 0.100 on the reference recording and raised high-confidence-tier precision to 0.93. The veto layer was measured rather than assumed: it removes 60% of extracted fields and 72% of the errors, a 67% hit rate against a 48% base error rate. Every field cites a verbatim transcript span scored for presence, entailment and uniqueness, so an ambiguous span such as a bare "yes" gets discounted. I also built the batch evaluation harness and a threshold-fitting tool sweeping false-auto-fill rate against coverage, plus transcription caching with deterministic sampling so evaluation runs repeat exactly.</p>
         <div class="proj-highlights">
           <span class="highlight">Speech-to-text · LLM extraction</span>
           <span class="highlight">38+ languages · 11+ form types</span>
@@ -534,62 +629,8 @@
       </div>
     </article>
 
-    <article class="project-card reveal" id="project-gradcore">
-      <div class="proj-num">05</div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-year">Jun 2026</span>
-          <span class="proj-badge badge-nlp">LLM Evaluation</span>
-          <span class="proj-badge badge-ml">Consulting</span>
-        </div>
-        <h3 class="proj-title">Generative Engine Optimisation Audit for a Radiology Provider</h3>
-        <p class="proj-desc">Generative Engine Optimisation Analyst at GradCore, for client Radiology Seminars. The question was whether search rank predicts whether an LLM names you. It does not. Running matched prompts through four assistants and comparing the provider sets returned against Google's results, <strong style="color:var(--gold-light)">every model named globally known institutions and dropped local providers holding page-one rank</strong>. I built a Python query-mining and gap-classification pipeline over 120 queries drawn from 13 seed topics, labelling each against a four-competitor benchmark by fixed rules — 71 flagged, 59.2% — and logging every prompt, model output and source so the classification is auditable rather than asserted. Compiled and delivered the engagement's 83-page report and 27-slide presentation, working directly with the client throughout.</p>
-        <div class="proj-highlights">
-          <span class="highlight">4 assistants benchmarked</span>
-          <span class="highlight">120 queries · 13 seed topics</span>
-          <span class="highlight">Google Search Console</span>
-          <span class="highlight">83-page report · 27 slides</span>
-          <span class="highlight">Client-facing delivery</span>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <p class="section-label reveal">Work</p>
-  <h2 class="section-title reveal">Selected projects</h2>
-  <div class="projects-list">
-
-    <article class="project-card reveal" id="project-jaffle">
-      <div class="proj-num">01</div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-year">Sep 2026</span>
-          <span class="proj-badge badge-ml">ML</span>
-          <span class="proj-badge badge-mlops">Data Engineering</span>
-        </div>
-        <h3 class="proj-title">Jaffle Demand Lab — Forecasting with Ground-Truth Model Evaluation</h3>
-        <p class="proj-desc">A forecasting system built to be checked rather than trusted. A seeded simulator generates 687k orders and 984k order lines across 1,096 days, so ground truth exists and every accuracy claim can be tested against it instead of against another model's output. Nine models were benchmarked over 52,310 store × SKU × day rows under rolling-origin cross-validation, cutting <strong style="color:var(--gold-light)">RMSE 38.2% below baseline</strong> on a 90-day holdout scored exactly once. A Poisson fit was replaced with a Negative Binomial GLM after measuring overdispersion at Pearson &#967;²/df = 4.80. The leakage result is the one I would point at: random K-fold overstated accuracy by 6.1% against a size-matched rolling fold — measured, not assumed — with point-in-time correctness enforced by a dbt test that recomputes every rolling window. Five injected source faults each pair a detecting test with a repairing model, under CI on every commit, and the whole thing runs from a clean clone on DuckDB with no cloud credentials.</p>
-        <div class="proj-highlights">
-          <span class="highlight">dbt Fusion · 23 models · 114 tests</span>
-          <span class="highlight">DuckDB · BigQuery</span>
-          <span class="highlight">LightGBM · statsmodels</span>
-          <span class="highlight">Rolling-origin CV</span>
-          <span class="highlight">pytest · GitHub Actions CI</span>
-        </div>
-        <div class="proj-links">
-          <a class="proj-link primary" href="https://github.com/pranavgc/UOB_dbt_workshop_starter" target="_blank" rel="noopener">Code <span class="arw">&#8599;</span></a>
-        </div>
-      </div>
-    </article>
-
     <article class="project-card reveal" id="project-skillsync">
-      <div class="proj-num">02</div>
+      <div class="proj-num">08</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Apr – May 2026</span>
@@ -611,31 +652,28 @@
       </div>
     </article>
 
-    <article class="project-card reveal" id="project-insolvency">
-      <div class="proj-num">03</div>
+    <article class="project-card reveal" id="project-gradcore">
+      <div class="proj-num">09</div>
       <div class="proj-body">
         <div class="proj-meta">
-          <span class="proj-year">Jan – Mar 2026</span>
-          <span class="proj-badge badge-ml">ML</span>
-          <span class="proj-badge badge-nlp">NLP</span>
+          <span class="proj-year">Jun 2026</span>
+          <span class="proj-badge badge-nlp">LLM Evaluation</span>
+          <span class="proj-badge badge-ml">Consulting</span>
         </div>
-        <h3 class="proj-title">Predictive Modelling for UK Restaurant Insolvency</h3>
-        <p class="proj-desc">An early-warning system for the failure of food and beverage businesses across the UK. The hard part was the data, not the model: 5.6M+ Companies House records resolved into a 24,750-sample dataset by matching entities across four sources that share no primary key. Zero-shot sentiment classification with facebook/bart-large-mnli supplied the consumer-facing signal, and an XGBoost classifier (1,200 trees, CUDA A100) reached F1 = 0.24, precision = 0.48 and AUC = 0.73 on the minority class under 95:5 imbalance. Gain-based feature importance gave the finding worth keeping: <strong style="color:var(--gold-light)">structural and administrative signals beat customer-facing metrics</strong> as failure predictors, and they are available before a restaurant opens its doors.</p>
+        <h3 class="proj-title">Generative Engine Optimisation Audit for a Radiology Provider</h3>
+        <p class="proj-desc">Generative Engine Optimisation Analyst at GradCore, for client Radiology Seminars. The question was whether search rank predicts whether an LLM names you. It does not. Running matched prompts through four assistants and comparing the provider sets returned against Google's results, <strong style="color:var(--gold-light)">every model named globally known institutions and dropped local providers holding page-one rank</strong>. I built a Python query-mining and gap-classification pipeline over 120 queries drawn from 13 seed topics, labelling each against a four-competitor benchmark by fixed rules — 71 flagged, 59.2% — and logging every prompt, model output and source so the classification is auditable rather than asserted. Compiled and delivered the engagement's 83-page report and 27-slide presentation, working directly with the client throughout.</p>
         <div class="proj-highlights">
-          <span class="highlight">XGBoost · CUDA A100</span>
-          <span class="highlight">facebook/bart-large-mnli</span>
-          <span class="highlight">SMOTE · 95:5 imbalance</span>
-          <span class="highlight">5.6M+ records · 4 sources</span>
-          <span class="highlight">Zero-shot NLP</span>
-        </div>
-        <div class="proj-links">
-          <a class="proj-link primary" href="https://github.com/pranavgc/Spill_the_tea" target="_blank" rel="noopener">Code <span class="arw">&#8599;</span></a>
+          <span class="highlight">4 assistants benchmarked</span>
+          <span class="highlight">120 queries · 13 seed topics</span>
+          <span class="highlight">Google Search Console</span>
+          <span class="highlight">83-page report · 27 slides</span>
+          <span class="highlight">Client-facing delivery</span>
         </div>
       </div>
     </article>
 
     <article class="project-card reveal" id="project-mlops">
-      <div class="proj-num">04</div>
+      <div class="proj-num">10</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Dec 2024 – Jan 2025</span>
@@ -651,27 +689,6 @@
         </div>
         <div class="proj-links">
           <a class="proj-link primary" href="https://huggingface.co/Licht1183" target="_blank" rel="noopener">HuggingFace <span class="arw">&#8599;</span></a>
-        </div>
-      </div>
-    </article>
-
-    <article class="project-card reveal" id="project-muon">
-      <div class="proj-num">05</div>
-      <div class="proj-body">
-        <div class="proj-meta">
-          <span class="proj-year">Jun – Sep 2023</span>
-          <span class="proj-badge badge-dl">Deep Learning</span>
-          <span class="proj-badge badge-phys">Physics</span>
-        </div>
-        <h3 class="proj-title">Muon Scattering Tomography via U-Net Segmentation</h3>
-        <p class="proj-desc">A U-Net segmentation CNN that localises and identifies civil structures and materials from atmospheric muon scattering, using Geant4 simulation data. Cosmic-ray muons pass through almost anything, so the signal is what the scattering angles imply about density along the path rather than anything directly imaged.</p>
-        <div class="proj-highlights">
-          <span class="highlight">U-Net / CNN</span>
-          <span class="highlight">Image Segmentation</span>
-          <span class="highlight">Geant4</span>
-        </div>
-        <div class="proj-links">
-          <a class="proj-link primary" href="https://github.com/pranavgc" target="_blank" rel="noopener">GitHub <span class="arw">&#8599;</span></a>
         </div>
       </div>
     </article>
