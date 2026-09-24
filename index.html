@@ -168,6 +168,8 @@
   .badge-med{background:rgba(80,190,220,.1);color:#5ec8e0;border:1px solid rgba(80,190,220,.2)}
   .proj-title{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:.6rem;line-height:1.2}
   .proj-desc{font-size:.92rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:620px}
+  .proj-desc + .proj-desc{margin-top:.9rem}
+  .proj-desc code{font-family:var(--font-mono);font-size:.85em;color:var(--text);background:rgba(201,150,58,.07);padding:.08em .35em;border:1px solid rgba(201,150,58,.14)}
   .proj-highlights{margin-top:.85rem;display:flex;flex-wrap:wrap;gap:.5rem}
   .highlight{font-family:var(--font-mono);font-size:10px;color:var(--muted);border:1px solid var(--border);padding:.25rem .6rem}
   .proj-links{margin-top:1.15rem;display:flex;flex-wrap:wrap;gap:.6rem}
@@ -370,6 +372,19 @@
         <span class="tag blue">Negative Binomial GLM</span>
         <span class="tag blue">Rolling-origin CV</span>
         <span class="tag blue">Seed Replication</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-cat">Numerical Methods &amp; Simulation</div>
+      <div class="skill-tags">
+        <span class="tag">ODE Integrators (RK4, Verlet)</span>
+        <span class="tag">SDEs / Euler–Maruyama</span>
+        <span class="tag">Monte Carlo Sampling</span>
+        <span class="tag">Boundary-Value / Shooting</span>
+        <span class="tag">Eigenvalue Methods (QR, Power)</span>
+        <span class="tag">Finite Differences</span>
+        <span class="tag">Convergence Analysis</span>
+        <span class="tag">Vectorisation / NumPy</span>
       </div>
     </div>
     <div class="skill-card reveal">
@@ -605,8 +620,34 @@
       </div>
     </article>
 
-    <article class="project-card reveal" id="project-muon">
+    <article class="project-card reveal" id="project-numerics">
       <div class="proj-num">07</div>
+      <div class="proj-body">
+        <div class="proj-meta">
+          <span class="proj-year">2023 · rebuilt Sep 2026</span>
+          <span class="proj-badge badge-mlops">Numerical Methods</span>
+          <span class="proj-badge badge-ml">Stochastic Processes</span>
+          <span class="proj-badge badge-phys">Computational Physics</span>
+        </div>
+        <h3 class="proj-title">Numerical Methods from Scratch — ODEs, SDEs, Eigenvalue and Boundary-Value Solvers</h3>
+        <p class="proj-desc">Twenty problems across nine worksheets in computational physics, rebuilt in 2026 under one constraint: every algorithm written by hand. No SciPy, no <code>numpy.linalg</code>, no <code>odeint</code> or <code>solve_ivp</code> — the only third-party imports across all twenty files are NumPy and Matplotlib. That constraint is the point. You cannot hide behind a library call, so an integrator either hits its theoretical convergence order or it does not. Written from scratch: RK4 and Verlet for ODEs, Numerov for the Schrödinger equation, Euler–Maruyama for stochastic differential equations including Black–Scholes, Box–Muller and inverse-transform sampling for Monte Carlo, modified Gram–Schmidt with QR iteration and power iteration with left-eigenvector deflation for eigenvalue problems, and shooting methods driven by bisection, secant and a two-dimensional Newton solve on a finite-difference Jacobian.</p>
+        <p class="proj-desc">Each script proves itself against a closed form rather than asking to be believed. Measured convergence orders: <strong style="color:var(--gold-light)">2.000 for Verlet velocity error, 3.976 for RK4, 0.498 for Euler–Maruyama strong convergence</strong> — against theoretical 2, 4 and 0.5. The Numerov ground state lands within <strong style="color:var(--gold-light)">1.0e-11</strong> of the analytic infinite-well energy, and the shooting solver recovers the exact initial slope to ten decimal places at an rms of 9.1e-13. Random-walk variance measures 1.0034N against an exact 1.0N. A birth–death process settles at mean 49.85 and variance 49.06, which is the Poisson signature you want to see. Two places earned optimisation: histogram binning went from O(N²) to O(N), and the random walk from 100 walkers in 8.9 s to 20,000 in 3.9 s once the step draws were vectorised. The whole suite runs in about 59 seconds.</p>
+        <div class="proj-highlights">
+          <span class="highlight">RK4 · Verlet · Numerov</span>
+          <span class="highlight">Euler–Maruyama SDEs · Black–Scholes</span>
+          <span class="highlight">Box–Muller · inverse-transform MC</span>
+          <span class="highlight">Gram–Schmidt · QR · power iteration</span>
+          <span class="highlight">Orders 2.000 / 3.976 / 0.498</span>
+          <span class="highlight">Zero library solvers · NumPy only</span>
+        </div>
+        <div class="proj-links">
+          <a class="proj-link primary" href="https://github.com/pranavgc/Numerical_Physics" target="_blank" rel="noopener">Code <span class="arw">&#8599;</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card reveal" id="project-muon">
+      <div class="proj-num">08</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Jun – Sep 2023</span>
@@ -638,7 +679,7 @@
   <div class="projects-list">
 
     <article class="project-card reveal" id="project-armour">
-      <div class="proj-num">08</div>
+      <div class="proj-num">09</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">May – Sep 2026</span>
@@ -659,7 +700,7 @@
     </article>
 
     <article class="project-card reveal" id="project-skillsync">
-      <div class="proj-num">09</div>
+      <div class="proj-num">10</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Apr – May 2026</span>
@@ -682,7 +723,7 @@
     </article>
 
     <article class="project-card reveal" id="project-gradcore">
-      <div class="proj-num">10</div>
+      <div class="proj-num">11</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Jun 2026</span>
@@ -702,7 +743,7 @@
     </article>
 
     <article class="project-card reveal" id="project-mlops">
-      <div class="proj-num">11</div>
+      <div class="proj-num">12</div>
       <div class="proj-body">
         <div class="proj-meta">
           <span class="proj-year">Dec 2024 – Jan 2025</span>
